@@ -1,26 +1,42 @@
-import React from 'react';
+import React, {FC, useContext, useEffect} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import LoginForm from "./presenter/forms/LoginForm";
+import {Context} from "./index";
+import {observer} from "mobx-react-lite";
+import CalculateForm from "./presenter/forms/CalculateForm";
 
-function App() {
+
+  const App: FC = () => {
+    const {store} = useContext(Context);
+
+    useEffect(() => {
+      if (localStorage.getItem('token')) {
+        store.checkAuth()
+      }
+    }, [])
+
+
+      if (!store.isAuth) {
+          return (
+              <div>
+                  <LoginForm/>
+              </div>
+          );
+      }
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <div className="container">
+
+              <h1>{store.isAuth ? ` ${store.user}` : ''}</h1>
+              <h1>welcome to the load balancer</h1>
+              <h3>input number to calculate the factorial</h3>
+              <div>
+                  <CalculateForm/>
+              </div>
+          </div>
   );
 }
 
-export default App;
+export default observer(App);

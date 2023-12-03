@@ -36,3 +36,88 @@
     transform: rotate(360deg);
   }
 }
+/* App.css */
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.container {
+  text-align: center;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.input-container {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  padding: 10px 50px;
+  margin: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.view-history-button{
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+
+}
+h1 {
+  color: #333;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.error-text {
+  color: red;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: center;
+}
