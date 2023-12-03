@@ -8,10 +8,10 @@ const History: FC = () => {
 
     const history = async () => {
         try {
-            await store.login(username, password, (error) => {
-                setLoginErrorMessage(error)
-                setRegistrationErrorMessage(null)
-            });
+            // await store.login(username, password, (error) => {
+            //     setLoginErrorMessage(error)
+            //     setRegistrationErrorMessage(null)
+            // });
         } catch (error: any) { }
     };
 
